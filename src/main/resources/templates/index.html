@@ -224,7 +224,30 @@
 	    font-weight: bold;
 	    cursor: pointer;
 	}
-		
+	
+	@media (max-width: 768px) {
+    .navbar-nav .nav-link {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .dropdown-menu {
+        position: static;
+        float: none;
+        width: 100%;
+        text-align: center;
+        background-color: #006400;
+    }
+
+    .dropdown-menu .dropdown-item {
+        color: white;
+    }
+
+    .dropdown-menu .dropdown-item:hover {
+        background-color: #004d00;
+    }
+}
+	
         
     </style>
 </head>
@@ -242,7 +265,7 @@
     <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg">
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-    <ul class="navbar-nav flex-column flex-md-row text-center w-100">
+    <ul class="navbar-nav flex-column flex-md-row justify-content-center text-center">
         <!-- Cada botón puede mantenerse igual -->
         <li class="nav-item">
             <a class="nav-link" href="/">Inicio</a>
