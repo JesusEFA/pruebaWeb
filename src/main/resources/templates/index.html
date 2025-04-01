@@ -241,48 +241,33 @@
 
     <!-- Menú de navegación -->
     <nav class="navbar navbar-expand-lg">
-        <div class="container">
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="/">Inicio</a>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="hermandadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Hermandad
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="hermandadDropdown">
-                            <a class="dropdown-item" href="/hermandad/historia">Historia</a>
-                            <a class="dropdown-item" href="/hermandad/reglas">Reglas de la Hermandad</a>
-                            <a class="dropdown-item" href="/hermandad/junta-de-gobierno">Junta de Gobierno</a>
-                        </div>
-                    </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="imagenesDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Sagradas Imágenes
-                        </a>
-                        <div class="dropdown-menu" aria-labelledby="imagenesDropdown">
-                            <a class="dropdown-item" href="/sagradasImagenes/virgen-de-la-esperanza">Virgen de la Esperanza</a>
-                            <a class="dropdown-item" href="/sagradasImagenes/jesus-en-el-descendimiento">Jesús en el Descendimiento</a>
-                            <a class="dropdown-item" href="/sagradasImagenes/oracion-en-el-huerto">Oración en el Huerto</a>
-                            <a class="dropdown-item" href="/sagradasImagenes/nino-carpintero">Niño Carpintero</a>
-                        </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/multimedia">Multimedia</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hazte-hermano">Hazte Hermano</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/contacto">Contacto</a>
-                    </li>
-                </ul>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+    <ul class="navbar-nav flex-column flex-md-row text-center w-100">
+        <!-- Cada botón puede mantenerse igual -->
+        <li class="nav-item">
+            <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="hermandadDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Hermandad
+            </a>
+            <div class="dropdown-menu" aria-labelledby="hermandadDropdown">
+                <a class="dropdown-item" href="/hermandad/historia">Historia</a>
+                <a class="dropdown-item" href="/hermandad/reglas">Reglas</a>
+                <a class="dropdown-item" href="/hermandad/junta-de-gobierno">Junta de Gobierno</a>
             </div>
-        </div>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/multimedia">Multimedia</a>
+        </li>
+        <li class="nav-item">
+                <a class="nav-link" href="/hazte-hermano">Hazte Hermano</a>
+        </li>
+            <li class="nav-item">
+			<a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+    </ul>
+</div>
     </nav>
 
     <!-- Contenido Principal -->
