@@ -3,8 +3,7 @@ package com.hermandad_virgenesperanza.web;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(exclude = {org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration.class})
-@SpringBootApplication
+@SpringBootApplication(exclude = {HibernateJpaAutoConfiguration.class})
 public class WebFinalEsperanzaApplication {
 
 	public static void main(String[] args) {
