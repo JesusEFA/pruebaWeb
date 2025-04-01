@@ -11,7 +11,7 @@ COPY . .
 RUN chmod +x ./mvnw && ./mvnw clean package -DskipTests
 
 # Exponer el puerto que usa tu app
-EXPOSE 8080
+EXPOSE 9090
 
 # Ejecutar el jar generado (ajustado a tu estructura)
 CMD ["java", "-jar", "$(find target -name '*.jar' | head -n 1)"]
