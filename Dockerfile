@@ -10,6 +10,6 @@ RUN apt-get update && apt-get install -y maven \
     && mvn clean package -DskipTests
 
 # Ejecutar la aplicación
-EXPOSE 8080
-CMD ["java", "-jar", "target/*.jar"]
+EXPOSE 9090
+CMD ["java", "-jar", "target/WebFinalEsperanza-0.0.1-SNAPSHOT.jar"]
 
