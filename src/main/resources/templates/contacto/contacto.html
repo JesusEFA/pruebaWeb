@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Contacto</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+    
+        /* Encabezado */
+        .header-container {
+            background-color: #006400;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 5px solid #FFFFFF;
+        }
+
+        .header-container img {
+            max-height: 80px;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .header-container h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 0;
+        }
+
+        /* Menú de navegación */
+        .navbar {
+            background-color: #006400;
+        }
+        .navbar-nav .nav-link {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-nav .nav-link:hover, .navbar-nav .dropdown-item:hover {
+            color: #FFD700;
+        }
+        .dropdown-menu {
+            background-color: #006400;
+        }
+        .dropdown-item {
+            color: white;
+        }
+
+        /* Contenido Principal */
+        .contact-container {
+            margin-top: 30px;
+        }
+
+        .contact-title {
+            margin-bottom: 20px;
+            color: #006400;
+        }
+
+        .map-container {
+            margin-top: 40px;
+        }
+
+        /* Ajustes generales */
+        .form-group label {
+            font-weight: 600;
+        }
+        .btn-success {
+            background-color: #006400;
+            border-color: #006400;
+        }
+        .btn-success:hover {
+            background-color: #004f00;
+            border-color: #004f00;
+        }
+        
+                /* Pie de página */
+        .footer {
+            background-color: #004d00;
+            color: white;
+        }
+
+        .footer a {
+            color: #FFD700;
+        }
+
+        .footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer img.whatsapp-icon {
+            width: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        .social-icons img {
+            width: 30px;
+            margin: 10px 5px 0;
+        }
+
+        .map-container iframe {
+            width: 100%;
+            border: 0;
+            border-radius: 10px;
+            height: 250px;
+        }
+        /* Hover elegante para enlaces sociales */
+		.footer a:hover span {
+		    text-decoration: underline;
+		}
+		
+		.footer a img {
+		    transition: transform 0.2s ease;
+		}
+		
+		.footer a:hover img {
+		    transform: scale(1.15);
+		}
+		
+		/* Botón volver arriba */
+		#backToTop {
+		    position: fixed;
+		    bottom: 20px;
+		    right: 20px;
+		    background-color: #006400;
+		    color: white;
+		    border: none;
+		    border-radius: 50%;
+		    width: 45px;
+		    height: 45px;
+		    font-size: 20px;
+		    display: none;
+		    align-items: center;
+		    justify-content: center;
+		    cursor: pointer;
+		    z-index: 1000;
+		    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+		}
+		
+		#backToTop:hover {
+		    background-color: #004d00;
+		}
+    </style>
+</head>
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="header-container">
+            <a href="/">
+                <img src="/images/logoNuevo.png" alt="Logo Hermandad">
+            </a>
+            <h1>HERMANDAD DE JESÚS EN EL DESCENDIMIENTO Y MARÍA SANTÍSIMA DE LA ESPERANZA</h1>
+        </div>
+    </header>
+
+<!-- Menú de navegación -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand d-lg-none text-white font-weight-bold" href="#">Menú</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon" style="background-color: white; width: 30px; height: 3px; display: block; margin: 5px 0;"></span>
+      <span class="navbar-toggler-icon" style="background-color: white; width: 30px; height: 3px; display: block; margin: 5px 0;"></span>
+      <span class="navbar-toggler-icon" style="background-color: white; width: 30px; height: 3px; display: block; margin: 5px 0;"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+      <ul class="navbar-nav text-center">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Inicio</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="hermandadDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Hermandad
+          </a>
+          <div class="dropdown-menu" aria-labelledby="hermandadDropdown">
+            <a class="dropdown-item" href="/hermandad/historia">Historia</a>
+            <a class="dropdown-item" href="/hermandad/reglas">Reglas</a>
+            <a class="dropdown-item" href="/hermandad/junta-de-gobierno">Junta de Gobierno</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="imagenesDropdown" role="button"
+             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Sagradas Imágenes
+          </a>
+          <div class="dropdown-menu" aria-labelledby="imagenesDropdown">
+            <a class="dropdown-item" href="/sagradasImagenes/virgen-de-la-esperanza">Virgen de la Esperanza</a>
+            <a class="dropdown-item" href="/sagradasImagenes/jesus-en-el-descendimiento">Jesús en el Descendimiento</a>
+            <a class="dropdown-item" href="/sagradasImagenes/oracion-en-el-huerto">Oración en el Huerto</a>
+            <a class="dropdown-item" href="/sagradasImagenes/nino-carpintero">Niño Carpintero</a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/multimedia">Multimedia</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/hazte-hermano">Hazte Hermano</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contacto">Contacto</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <!-- Contenido Principal -->
+    <main class="container contact-container">
+        <h2 class="text-center contact-title">Contacto</h2>
+        
+        <div class="row">
+            <!-- Formulario de contacto -->
+            <div class="col-md-6">
+                <!-- Usar mailto para enviar al correo deseado -->
+                <form action="mailto:secretario.virgenesperanza@gmail.com" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label for="nombre">Nombre:</label>
+                        <input type="text" class="form-control" id="nombre" name="Nombre" placeholder="Tu nombre..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Correo electrónico:</label>
+                        <input type="email" class="form-control" id="email" name="Correo" placeholder="Tu correo..." required>
+                    </div>
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje:</label>
+                        <textarea class="form-control" id="mensaje" name="Mensaje" rows="5" placeholder="Tu mensaje..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3">Enviar</button>
+                </form>
+            </div>
+
+            <!-- Mapa de ubicación -->
+            <div class="col-md-6 map-container">
+                <p class="mb-2"><strong>Ubicación de la Capilla:</strong> C/ Emilio Nieto, 23 · Villarrubia de los Ojos (Ciudad Real)</p>
+                <!-- Google Maps Embed (puedes modificar la longitud y latitud según la ubicación exacta) -->
+                <iframe 
+                    src="https://www.google.com/maps?q=C.+Emilio+Nieto,+23,+13670+Villarrubia+de+los+Ojos,+Ciudad+Real&output=embed"
+                    width="100%" 
+                    height="320" 
+                    style="border:0;" 
+                    allowfullscreen="" 
+                    loading="lazy"
+                ></iframe>
+            </div>
+        </div>
+    </main>
+    
+    	 <!-- Pie de página completo con mejoras -->
+	<footer class="footer mt-5 pt-3 pb-3">
+	    <div class="container text-center">
+	        <img src="/images/logoNuevo.png" alt="Logo Hermandad" style="max-height: 50px; margin-bottom: 10px;">
+	        <p class="mb-1 font-weight-bold" style="font-size: 0.95rem;">
+	            HERMANDAD DE JESÚS EN EL DESCENDIMIENTO Y MARÍA SANTÍSIMA DE LA ESPERANZA
+	        </p>
+	
+	        <!-- Línea horizontal de contacto y redes -->
+	        <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mt-2 mb-2" style="gap: 30px;">
+	            <!-- WhatsApp -->
+	            <a href="https://wa.me/34611048685" target="_blank" title="WhatsApp"
+	               class="d-inline-flex align-items-center text-white" style="text-decoration: none;">
+	                <img src="https://img.icons8.com/color/48/000000/whatsapp--v1.png"
+	                     alt="WhatsApp" style="width: 24px; margin-right: 6px; vertical-align: middle;">
+	                <span style="font-size: 0.9rem;">611 04 86 85</span>
+	            </a>
+	
+	            <!-- Instagram -->
+	            <a href="https://www.instagram.com/hermandaddelaesperanza/?igsh=MWd4cWlhY3l5cDZlMA%3D%3D#" target="_blank" title="Instagram"
+	               class="d-inline-flex align-items-center text-white" style="text-decoration: none;">
+	                <img src="https://img.icons8.com/color/48/instagram-new--v1.png"
+	                     alt="Instagram" style="width: 24px; margin-right: 6px; vertical-align: middle;">
+	                <span style="font-size: 0.9rem;">Instagram</span>
+	            </a>
+	
+	            <!-- Facebook -->
+	            <a href="https://www.facebook.com/hermandad.esperanza.3?rdid=oiqitb9eWNNHQ5X8&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F1HEXYh2w1d%2F#"
+	               target="_blank" title="Facebook"
+	               class="d-inline-flex align-items-center text-white" style="text-decoration: none;">
+	                <img src="https://img.icons8.com/color/48/facebook-new.png"
+	                     alt="Facebook" style="width: 24px; margin-right: 6px; vertical-align: middle;">
+	                <span style="font-size: 0.9rem;">Facebook</span>
+	            </a>
+	        </div>
+	
+	        <!-- Dirección -->
+	        <p class="mb-2 mt-2" style="font-size: 0.9rem;">
+	            <strong>Dirección:</strong> C. Emilio Nieto, 23, 13670 Villarrubia de los Ojos, Ciudad Real
+	        </p>
+	
+	        <!-- Mapa -->
+	        <div class="map-container mt-3">
+	            <iframe
+	                src="https://www.google.com/maps?q=C.+Emilio+Nieto,+23,+13670+Villarrubia+de+los+Ojos,+Ciudad+Real&output=embed"
+	                allowfullscreen
+	                style="width: 100%; height: 180px; border: 0; border-radius: 10px;">
+	            </iframe>
+	        </div>
+	
+	        <hr style="background-color: white; margin-top: 10px; margin-bottom: 10px;">
+	        <p class="mb-0" style="font-size: 0.8rem;">&copy; <span id="year"></span> Hermandad. Todos los derechos reservados.</p>
+	    </div>
+	</footer>
+
+	<!-- Botón volver arriba -->
+	<button id="backToTop" title="Volver arriba">↑</button>
+
+	<script>
+	    // Mostrar año actual
+	    document.getElementById('year').textContent = new Date().getFullYear();
+	
+	    // Mostrar botón al hacer scroll
+	    window.onscroll = function () {
+	        document.getElementById("backToTop").style.display = (window.scrollY > 300) ? "flex" : "none";
+	    };
+	
+	    // Scroll suave al principio
+	    document.getElementById("backToTop").addEventListener("click", function () {
+	        window.scrollTo({ top: 0, behavior: 'smooth' });
+	    });
+	</script>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+    	<script>
+    // Mostrar dropdown al pasar el ratón (solo en escritorio)
+    document.addEventListener('DOMContentLoaded', function () {
+        if (window.innerWidth >= 992) {
+            const dropdowns = document.querySelectorAll('.navbar .dropdown');
+
+            dropdowns.forEach(function (dropdown) {
+                dropdown.addEventListener('mouseenter', function () {
+                    const toggle = this.querySelector('.dropdown-toggle');
+                    const menu = this.querySelector('.dropdown-menu');
+                    toggle.classList.add('show');
+                    menu.classList.add('show');
+                });
+
+                dropdown.addEventListener('mouseleave', function () {
+                    const toggle = this.querySelector('.dropdown-toggle');
+                    const menu = this.querySelector('.dropdown-menu');
+                    toggle.classList.remove('show');
+                    menu.classList.remove('show');
+                });
+            });
+        }
+    });
+	</script>
+</body>
+</html>
