@@ -2,9 +2,24 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Virgen de la Esperanza</title>
+    <title>Historia de la Hermandad</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
+        	html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        main.container {
+            flex: 1;
+        }
         /* Encabezado */
         .header-container {
             background-color: #006400;
@@ -30,64 +45,32 @@
         .navbar {
             background-color: #006400;
         }
+
         .navbar-nav .nav-link {
             color: white;
             font-weight: bold;
         }
+
         .navbar-nav .nav-link:hover, .navbar-nav .dropdown-item:hover {
             color: #FFD700;
         }
+
         .dropdown-menu {
             background-color: #006400;
         }
+
         .dropdown-item {
             color: white;
         }
 
-        /* Contenido Principal */
-        .content-container {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .content-section {
-            display: flex;
-            align-items: center;
-            gap: 20px;
-        }
-
-        /* Intercalar imágenes derecha / izquierda */
-        /* Secciones pares con flex-direction: row-reverse */
-        .content-section:nth-child(even) {
-            flex-direction: row-reverse !important;
-        }
-
-        .content-section img {
-            width: 150px;
-            height: auto;
+        /* Contenido principal */
+        .content {
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            padding: 20px;
             border-radius: 5px;
-        }
-
-        .content-text {
-            flex: 1;
+            margin-top: 20px;
             text-align: justify;
-            font-size: 1rem;
-            color: #333;
-        }
-
-        @media (max-width: 768px) {
-            /* En pantallas pequeñas, se apila todo en columna */
-            .content-section {
-                flex-direction: column !important;
-                text-align: center;
-            }
-            .content-section img {
-                width: 100%;
-                max-width: 250px;
-                height: auto;
-            }
         }
         
         /* Pie de página */
@@ -222,64 +205,316 @@
     </div>
   </div>
 </nav>
+
     <!-- Contenido Principal -->
-    <main class="container">
-        <h2 class="text-center mt-4">Virgen de la Esperanza</h2>
-        <div class="content-container">
-            <!-- Sección 1 (imagen izquierda, texto a la derecha) -->
-            <div class="content-section">
-                <img src="/images/virgenEsperanza/virgen1.jpeg" alt="Imagen 1">
-                <p class="content-text">
-                    Es una imagen de madera policromada (manos y cabeza). Es del año 1941, del escultor sevillano Agustín Sánchez Cid.
-                    Escultor y médico de profesión, que se casó con una mujer de este pueblo, Dña. Sofía Peñuelas Real. La mujer murió y, al realizar la imagen de la Virgen, se inspiró en ella.
-                    El 20 de febrero de 1942 el escultor sevillano comunicó
-                    a la Hermandad que ya había terminado su obra. Fue trasladada de Sevilla a nuestro pueblo por Manuel Menchero, Valerio
-                    Martín-Moreno, Cecilio Majan y Luis Villalobos.
-                </p>
-            </div>
-            <!-- Sección 2 (imagen derecha, texto a la izquierda) -->
-            <div class="content-section">
-                <p class="content-text">
-                    Es una dolorosa de tipo sevillano, vestida con un delantal beige bordado en plata y un manto de terciopelo verde bordado en oro de Charo Bernardino.
-                    Es portada en la procesión de la oración en el huerto en un trono de plata repujada elaborado por la orfebrería Ramos, Sevilla en 1992, con doce
-                    varales en plata de Orovio de la Torre, Torralba de Calatrava (Ciudad Real), en 1999 y varias jarras de plata.
-                    Remata el conjunto un palio de terciopelo verde bordado en oro, dos candelabros de cola y una candelería elaborada por Antonio Santos de Sevilla.
-                    Es llevada al sistema de costal por 35 costaleros.
-                    
-                </p>
-                <img src="/images/virgenEsperanza/virgen2.JPG" alt="Imagen 2">
-            </div>
-           
-            <img src="/images/virgenEsperanza/virgen3.jpg" alt="Imagen 3">
-            <!-- Sección 4 (imagen derecha, texto a la izquierda) -->
-            <div class="content-section">
-                <p class="content-text">
-                
-                    Cada tres años desfila en la procesión del resucitado, sobre una carroza de ruedas, en madera dorada con pan de oro, con una greca con motivos
-                    alegóricos, cuatro brazos de luz y un campo de velas artificiales, rematada con unas faldillas de terciopelo verde. Es obra de
-                    Santiago Lara, de los talleres de escultura religiosa "Nuestra Señora de la Asunción" (Socuéllamos), del año 1976. Es empujada por seis cofrades.
-                    
-                    "El encuentro" con Cristo se produce en una esquina de la localidad. En ese momento se tira de una mantilla negra que cubre la cabeza de la Virgen que se queda
-                    con su manto verde.
-                </p>
-                <img src="/images/virgenEsperanza/virgen4.jpg" alt="Imagen 4">
-            </div>
-            <!-- Sección 5 (imagen izquierda, texto derecha) -->
-            <div class="content-section">
-                <img src="/images/virgenEsperanza/virgen5.jpg" alt="Imagen 5">
-                <p class="content-text">
-                    Como nota anecdótica podemos decir que la Virgen de la Esperanza fue nombrada Hermana Honoraria de la Hermandad de San Isidro
-                    Labrador y Santa María de la Cabeza, debido a que, cuando pasa por delante de la ermita de dicho santo su trono en la procesión
-                    de la noche del Jueves Santo, sus costaleros mecen la imagen y le ofrecen flores al Santo Labrador. Además, amadrinó a la Virgen de la Amargura de la Hermandad de Jesús Nazareno.
-                </p>
-            </div>
-            <!-- Sección 6 (imagen derecha, texto a la izquierda) -->
-            <div class="content-section">
-                <p class="content-text">
-                    María Santísima de la Esperanza fue restaurada en el año 1995 en los talleres de Santiago de Lara, en Socuéllamos, y en el año 2005 por el reconocido escultor D. Luis Álvarez Duarte.
-                </p>
-                <img src="/images/virgenEsperanza/virgen6.jpg" alt="Imagen 6">
-            </div>
+    <main class="container mt-5">
+        <div class="content">
+            <h2 class="text-center">Historia de la Hermandad</h2>
+            <p>
+                Para todo aquel que desee, gran parte de lo contado a continuación está recogido en el libro que escribió D. Isidoro Villalobos Racionero, hijo del fundador de nuestra Hermandad. La Hermandad posee copias de dicho libro, en el que se cuenta con detalle todo lo referente a nuestra Hermandad desde su fundación hasta el 2016, año del 75 aniversario.
+				Desde la Junta de Gobierno actual trataremos de sacar lo más esencial y llamativo, aunque debemos decirles que todo él es enriquecedor, por lo que les invitamos a que adquieran uno de los ejemplares del libro.
+            </p>
+            <p><strong>
+				PRESIDENTES
+
+            </strong></p>
+				
+				D. Luis Villalobos Villalobos (1940 a 1953).
+			</p>
+			</p>
+				
+				D. Juan Francisco Menchero Ortiz (1953 a 1955).
+			</p>
+			 </p>
+				
+				D. Lorenzo Redondo Redondo (1955 a 1959).
+			</p>
+			</p>
+				
+				D. Demetrio Mora Vallejo (1959 a 1994).
+			</p>
+			</p>
+				
+				D. Valentín Mora Vallejo (1994 a 2022).
+			</p>
+			</p>
+				
+				D. Pedro Antonio García López (2022 hasta la fecha).
+			</p>				
+				
+            <p><strong>
+				LOS INICIOS
+	       </strong></p>
+
+				El proceso fundacional de la Hermandad y Cofradía de Jesús en el Descendimiento y María Santísima de la Esperanza se inicia el día 10 de abril de 1941, festividad de Jueves Santo, y termina tres años después. Conocer, en la medida de lo posible, los pormenores de este proceso resulta ahora de capital importancia.
+
+	       </p>
+	       </p>
+
+				Pasada la contienda de la Guerra Civil española, sus fundadores actuaban por dos causas: una ambiental y otra impulsiva. Para comprender ambas debemos retrotraernos por un momento al ya lejano año de 1941 y a los días de su Semana Santa. Días santos aquellos en que las consecuencias de la pasada guerra civil se hacían presentes en todas las circunstancias a los villarrubieros. Estos vivían con la más profunda tristeza su situación personal tras los desastres de una contienda fratricida, cuyas heridas aún permanecían abiertas en muchos hogares, mientras seguían en la iglesia con el mayor recogimiento la Pasión de Jesucristo, a la fe del cual habían vuelto sus conciencias conmovidas, cuando no atormentadas, por aquellos mismos desastres.
+				
+	       </p>
+	       </p>
+				En esa atmósfera transcurre el Jueves Santo de abril de 1941. No procesionan las viejas hermandades de los “moraos” y los “blancos”, que antaño divulgaban con sus imágenes.
+	       </p>
+	       
+           <p>
+				La nostalgia católica de tantas ausencias se apodera de un grupo de tertulianos que, a eso de las 23:00 horas de aquel día festivo, se hallan reunidos en el “Círculo de la Unión”, el casino local. Y entonces, uno de ellos, el doctor D. Luis Villalobos, tiene la peregrina idea de formular a los otros esta pregunta: “¿Queréis que formemos una cofradía?”. La idea fue acogida con entusiasmo por todos los que nos encontrábamos reunidos y, a partir de ese día, todos empezamos a trabajar febrilmente en tan ardua tarea.
+				
+		   </p>
+		    <p>
+				
+				El núcleo fundacional de nuestra Hermandad quedaba, pues, establecido con aquellos tertulianos que unánimemente secundaron la idea peregrina de su promotor, el doctor Villalobos. Sus nombres y dedicaciones eran estos: Pedro Crespo Díaz del Campo, maestro nacional; Cecilio Maján Valdelomar, transportista; Manuel Menchero Ortiz, comerciante de tejidos; Pedro de la Osa Zamora, barman; José Palacios Alises, depositario de fondos municipales; Mariano Valdelomar Rabadán, maestro forjador; Isidoro Villalobos Villalobos, industrial vinatero; y Mariano Villegas Ladrón de Guevara, médico titular.
+				
+		   </p>
+		   <p>
+				
+				Primeras camareras: María Paz Díaz Lozano, Sofía Racionero Real, Carmen Real Camacha, Rosa Sánchez de Millán y Millán, a la que, por defunción, sucedió en 1952 su prima Martina Casanova Millán; María del Pilar Simancas Herrera y Rosa Utrilla Villegas, camareras que atendían indistintamente al adorno floral de Jesús en el Descendimiento y al de María de la Esperanza.
+				
+		   </p>
+		   <p>
+			
+				El 22 de mayo de 1941 se aprobaron las primeras reglas por las que habría de regirse nuestra Hermandad. Esas reglas eran una adaptación a la realidad villarrubiera de los estatutos de varias asociaciones sevillanas, sobre todo de la popularmente conocida como la Esperanza Macarena. Se dieron de alta en nuestra Hermandad, en el año 1941, ciento quince hombres y treinta y ocho mujeres.
+				
+		   </p>
+		   <p>
+			
+				
+				A partir del mes de febrero de 1942, portada por su autor, llegaba a Villarrubia de los Ojos procedente de Sevilla la imagen de Nuestra Señora de la Esperanza, que la Hermandad había encargado a D. Agustín Sánchez-Cid de Agüeros, vinculado afectivamente a esta nuestra población por su matrimonio con Doña Sofía Peñuelas Real.
+		   
+		   </p>
+		   <p>
+
+		  		Hizo la primera estación de penitencia de su historia a las 23:00 horas –hora en que surgió la idea de su fundación– del 2 de abril de 1942. La imagen de Nuestra Señora de la Esperanza, portada en andas por los cofrades, recorrió el itinerario previsto en medio de un silencio absoluto.
+				
+		   </p>
+		   <p>
+
+		  		A principios de 1943 nuestra Hermandad y Cofradía completaba la imaginería de su titularidad con la adquisición del patético paso de Jesús en el Descendimiento; obra esta de gran tamaño, ejecutada en pasta de madera en los talleres de la Casa de Arte Cristiano de la villa gerundense de Olot.
+		   </p>
+            <p><strong>
+                “Recogemos algunas curiosidades de los primeros estatutos”
+
+            </strong></p>
+            <p>
+
+				Quienes quisieran entrar a esta asociación —así hombres como mujeres, aunque estas no tendrían ni directa ni indirectamente parte en el gobierno y administración de la misma (es en 1989 cuando se incorpora la mujer a cargos directivos)— deberían ser católicos de buena vida, fama e intachable conducta moral y religiosa, y someterse a una serie de formalidades antes de inscribir su nombre en un libro de registro abierto al efecto.
+				
+				Todos los hermanos contraen unas obligaciones religiosas, sociales y económicas, al tiempo que asumen las penas que sus faltas acarrean. La procesión saldrá los Jueves Santo a las 23:00 horas (fecha inamovible), y los participantes en ella vestirán el traje propio de la cofradía.
+				
+				El escudo de la Hermandad será de figura circular y constará de un calvario, en cuya cima aparecen una cruz y dos escaleras apoyadas a ambos lados; al pie de la cruz y sobre el montículo, tres clavos, todo ello bordado en negro sobre fondo blanco.
+				
+				La túnica se compone de lana o similar, de color blanco crema, con capa; antifaz o capillo de terciopelo morado, como el cordón de seda que ceñirá la túnica en los nazarenos que acompañen el paso de Jesús en el Descendimiento, y de color verde en los de María de la Esperanza. (Esto fue hasta 1946; a partir de entonces, todos los penitentes llevarían el capillo verde, de ahí el apelativo de los “verdes”).
+				
+				Por último, todos los penitentes calzarán sandalias negras, y por no llevar guantes no podrán lucir nunca anillos.
+            </p>
+            <p>
+				Actualmente, las túnicas son de color blanco crema, de lana o similar; capa del mismo tono, capillo de terciopelo verde, cordón verde el Jueves Santo y negro el Viernes Santo; calzado negro, guante blanco crema y farol con cristales verdes, cartuchos de luz y mangos de metal repujado, bañado en plata.
+				
+            </p>
+            <p>
+
+				En 2013 se sustituyeron los estatutos por los hoy vigentes, y en 2021 se incluyeron unos reglamentos de régimen interno, por los que debemos ceñirnos todos los asociados a la Hermandad y Cofradía.
+				
+			 </p>
+            <p>
+
+				Uno de los puntos a tener en cuenta en los nuevos estatutos:
+				
+				“Como expresión de amor a la pobreza evangélica y solidaridad con los pobres, la Hermandad y Cofradía se obliga a entregar al menos el 10 % de las cuotas ordinarias de sus asociados para atender a las necesidades y problemas de los más débiles.”
+            </p>
+            <p><strong>
+				PROCESO, DESARROLLO Y PERFECCIONAMIENTO
+            
+            </strong></p>
+            <p>				
+				(Durante los siguientes años, todos los presidentes tienen por tarea la captación de asociados, y para ello es necesario renovar constantemente la Hermandad).
+				
+				
+            </p>
+            
+                        <p>				
+				
+				En 1950 se sufragaron los gastos de ensanchar y elevar el cancel de la puerta de la iglesia parroquial, para posibilitar la entrada y salida del paso del Descendimiento.
+				
+			
+            </p>
+                        <p>				
+				
+				La Virgen de la Esperanza se portó en andas hasta 1952, año en que se adquirió su primer paso. Aquel, por su peso y volumen, procesionó casi desde el principio montado sobre un paso de ruedas de galera; ruedas que, hasta su sustitución por neumáticos, tenían las llantas de hierro, por lo cual hubo que liarlas con cuerdas finas de esparto para amortiguar el ruido tremendo que hacían en el silencio de la noche.
+				
+				
+            </p>
+                        <p>				
+				
+				En 1964, la Junta de Gobierno se plantea añadir algún otro paso al cortejo procesional del Jueves Santo. Se pensó por entonces en sacar la imagen del Cristo del Perdón existente en la parroquia, pero considerando luego otras posibilidades, se optó por proponer a la Asamblea General la adquisición de un grupo tallado. Dicha Asamblea aprobó la propuesta, y a finales de 1965 D. Lorenzo Mora formalizaba un contrato con el conocido escultor D. Faustino Sanz Herranz, por el que se comprometía a realizar un paso con dos figuras: Jesús orando en el Huerto de los Olivos. Y así fue. El nuevo paso procesionó por primera vez en Villarrubia de los Ojos en la Semana Santa del año 1968.
+				
+				
+            </p>
+                        <p>				
+				
+				Catorce años después, en 1982, la Hermandad sumaba a su desfile pasionario una imagen de reducido tamaño, en madera, del Niño Jesús Carpintero, obra del imaginero D. José Luis Fernández Aznárez, que colocó sobre el pequeño paso que tres de sus camareras le habían donado con el objeto de que la representación infantil cofrade adquiriese protagonismo y provocase adhesiones.
+				
+				
+            </p>
+            
+                        <p>				
+				
+				
+				En cuanto a la incorporación de niños, hay que señalar que esta se venía efectuando desde el principio. Con objeto de mantener la cantera infantil, D. Lorenzo Mora hizo que nuestra Hermandad costeara la confección de túnicas para niños; túnicas que, formando parte del patrimonio asociativo, usaban los pequeños mientras les servían, entregándolas de nuevo a la Hermandad cuando, al crecer, dejaban de valerles. De esta manera se aseguraba el futuro cofrade.
+				
+				
+            </p>
+                        <p>				
+				
+				
+				Además, en la etapa a la que nos venimos refiriendo, nuestra Hermandad completó su notable patrimonio con la reforma, en 1991, del paso de María Santísima de la Esperanza, para que pudiese ser llevada por 35 costaleros bajo la dirección del capataz D. Mariano Salas Bellerín el primer año, y un año más tarde bajo la dirección de D. Tomás García Retamero Luengo, hasta la actualidad.
+            
+            </p>
+            <p>				
+            	El paso de María Santísima de la Esperanza está compuesto esencialmente por:
+            
+            </p>
+            <p>
+
+					- Techo de palio bordado por Doña Rocío Peláez y su hija Juana Isabel González, luego enriquecido.
+				
+            </p>
+                        <p>
+				
+					- Parihuela con trabajaderas, por Nicolás Camacho y Enrique Rabadán.
+            
+            </p>
+                        <p>
+				
+					- Varales de la orfebrería Orovio de la Torre, en Torralba de Calatrava.
+            
+            </p>
+                        <p>
+
+					
+					- Respiraderos y candelabros de cola, en orfebrería Ramos S.L. (Sevilla).
+            
+            </p>
+                        <p>
+				
+					- Candelería, por Antonio Santos (Sevilla).
+            
+            </p>
+                        <p>
+				
+					- Manto de Nuestra Señora de la Esperanza, por Charo Bernardino.
+            
+            </p>
+            <p>
+				Una mejora muy significativa fue la incorporación de costaleras a un paso nuevo hecho en los talleres de Luis Salmerón (Socuéllamos), para Jesús orando en el Huerto de los Olivos. Con un total de 48 costaleras, bajo la dirección de D. Nicolás Camacho Navarro, debutaron en la estación de penitencia de esta Hermandad la noche del Jueves Santo del año 1998, siendo estas las primeras costaleras de nuestra Semana Santa en Villarrubia de los Ojos.
+				
+            </p>
+                        <p>
+				Con el fin de seguir creciendo, y por aclamación de los asociados en Asamblea General, se decidió salir con el Niño Jesús Carpintero, en andas, con los niños de nuestra Hermandad, para que continúen con nuestras costumbres, tradiciones y religiosidad. Así, en el año 2017 procesionó por primera vez en la noche del Jueves Santo, con un total de 42 anderos bajo la dirección de D. Francisco Vallejo Ramírez. En 2018 se incorpora un paso nuevo para el Niño Jesús Carpintero, del tallista local D. Alberto Fernández.
+
+            </p>
+                        <p>
+				Mención especial merece D. Tomás García Retamero Luengo, que con tanto acierto ha sabido guiar a todos los que integramos los pasos a costal o en andas.
+         
+            </p>
+                        <p><strong>
+            	RESTAURACIONES
+
+            </strong></p>
+
+            <p>
+					- Jesús en el Descendimiento fue restaurado en el año 1997 en los talleres de Santiago de Lara, en Socuéllamos.
+	
+            </p>
+                        <p>
+					
+					- Jesús orando en el Huerto de los Olivos fue restaurado en el año 2002 por D. Faustino Sanz Herranz, y en 2024 por la restauradora Laura Pérez, en Sevilla.
+					
+            </p>
+                        <p>
+
+					- María Santísima de la Esperanza fue restaurada en el año 1995 en los talleres de Santiago de Lara, en Socuéllamos, y en el año 2005 por el reconocido escultor D. Luis Álvarez Duarte.
+			
+            </p>
+                        <p>
+					
+					- El Niño Jesús Carpintero fue restaurado en el año 2025 por la restauradora Laura Pérez, en Sevilla.
+            </p>
+            <p><strong>
+				CASA-CAPILLA DE HERMANDAD
+            </strong></p>
+            
+            <p>
+				
+				La obra más importante y de mayor envergadura, sin duda alguna hasta el día de hoy, es la casa-capilla de la Hermandad. La naturaleza de esta obra se proyectó y ejecutó con fines específicos: resolver determinadas necesidades y crear un espacio en el que pudiera desarrollarse mejor la actividad espiritual de la Hermandad.
+				
+				Con esta capilla, nuestra asociación ha conseguido, por tanto, el sitio adecuado para custodiar nuestras imágenes: el Niño Jesús Carpintero, Jesús orando en el Huerto de los Olivos, Jesús en el Descendimiento y María Santísima de la Esperanza durante el tiempo de Cuaresma. También se custodian nuestros valiosos pasos y enseres, dejando el local que teníamos hasta entonces como guardapasos, situado en la calle Segovia. La preparación y estancia de los pasos en el templo parroquial durante la Semana Santa no disminuiría en adelante el espacio reservado a los fieles que deseaban seguir los oficios litúrgicos del Triduo Sacro.
+				
+            </p>
+                        <p>
+				
+				El 23 de julio del año 2000 se formalizó el contrato de compraventa del amplio solar, situado en el número 23 de la calle Emilio Nieto, propiedad de Doña Petra Simancas Herrera, donde se levantaría el nuevo edificio.
+				
+				
+            </p>
+             <p>
+				
+				Pronto comenzaron los trabajos que, año tras año desde entonces, hicieron realidad dicha capilla y casa, finalizando en el año 2008.
+				
+            </p>
+            <p>
+
+				Esta Hermandad y Cofradía arbitró medidas extraordinarias y se desveló en busca de recursos, toda vez que la generosidad de las gentes – en dinero, efectos y jornales- no bastaba. Por ello a través de una financiación especial pudo alcanzarse la conclusión de los trabajos, cuyo coste se estimó en “más de un millón y medio de euros”.
+            </p>
+            
+            
+            
+             <p>
+
+				Se encargó el proyecto al arquitecto D. Jose Jacinto Fernandez López, el cual diseño en 2001 un espacio polivalente para los usos de capilla y casa. La dirección de obra y el maestro de ejecución fue D. Tomas García Retamero Luengo. 
+			</p>
+			
+			             <p>
+			 La edificación cuenta con un retranqueo a la calle Emilio Nieto donde está situada la fachada de ladrillo macizo rustico que termina con espadaña para dobles campanas que llevan por nombre Esperanza/ Maria Luisa y Sofia/ Maria Paula. Un elevado pórtico recercado con piedra Valdepeñas da paso a la nave principal abovedada con nervaduras, y a su izquierda se abren cuatro capillas laterales de menor altura, donde se guardan los pasos. Sobre estas capillas se encuentras unos ventanales para su iluminación. La cubierta se resuelve a dos aguas. Sobre el pórtico se sitúa el coro y enfrentado con este un paño de ladrillo que aloja tres hornacinas donde están colocadas las imágenes de Jesus orando, Angel Confortador y Niño Jesus Carpintero, bajo el cual está el altar. En el fondo se encuentra una sala para varios usos donde acoge también un pequeño almacén y una oficina, esta sala se comunica con el vestíbulo de la casa, puerta independiente ubicada en la fachada que recorre un largo pasillo que finaliza con otras dependencias, cocina, aseos y patio exterior. Desde esta arranca una escalera que alcanza una amplia sala para reuniones y usos varios, al fondo de esta y a la derecha se encuentra el museo. 
+
+			</p>
+			
+			<p>
+			 El Jueves Santo del 20 de Marzo del 2008 y siendo las 24 horas “el Hermano Mayor D. Valentin Mora Vallejo, abría las puertas de esta capilla y la Cruz de guía de la Hermandad daba los primeros pasos” de una estación de penitencia singular, a partir de entonces la entrada y salida de los pasos cofradieros de nuestra Hermandad se realizarían desde la nueva sede.
+			</p>
+			
+						<p>
+						Mención especial a D. Valentin Mora Vallejo y a todas sus Juntas de Gobierno que, con tanto esfuerzo, sacrificio, pero también con ilusión y entusiasmo lograron hacer posible un proyecto de tal envergadura.
+			</p>
+             
+             <p><strong>
+				PROYECTOS.
+           </strong></p>
+            
+             <p>
+				
+				Damos a conocer ciertos proyectos de diversa índole que la Hermandad ha colaborado.
+				
+					-Granja escuela Don Bosco en (Argentina)
+					-Comedor social para ancianos en Numi (Paraguay)
+					-Reconstrucción de casas en un poblado de (Mozambique)
+					-La participación que se mantiene siempre con Caritas Parroquial, sobre todo en campañas de vendimia y Navidad, ayuda a cualquier catástrofe natural, etc.
+				
+				Todos los proyectos llevados a cabo desde su fundación hasta nuestros días a sido posible realizando actividades de todo tipo, desde hacerse empresarios para espectáculos taurinos, folclóricos y deportivos, hasta hacer una agrupación teatral, también con rifas, cenas benéficas y un sinfín de actividades para lograr cualquier objetivo que se plantea.
+				
+            </p>
+            
+            <p><strong>
+				
+				FINAL	
+            </strong></p>
+            <p>
+
+				“El que da, no debe volver acordarse; pero el que recibe, nunca debe olvidar”.
+				Agradecimiento a todas aquellas personas que con su servicio han colaborado en el crecimiento y bienestar de nuestra Hermandad que hoy goza de tan buena salud.
+
+            </p>
         </div>
     </main>
     
@@ -356,7 +591,7 @@
 	    });
 	</script>
 	
-	<script>
+		<script>
     // Mostrar dropdown al pasar el ratón (solo en escritorio)
     document.addEventListener('DOMContentLoaded', function () {
         if (window.innerWidth >= 992) {
@@ -381,7 +616,7 @@
     });
 	</script>
 
-    <!-- Scripts de Bootstrap -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.4.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
