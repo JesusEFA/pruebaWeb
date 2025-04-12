@@ -113,10 +113,10 @@ public class MainController {
         return "multimedia/verbena";
     }
     
-    @GetMapping("/contacto")
+   /* @GetMapping("/contacto")
     public String mostrarContacto() {
         // Devuelve el nombre del archivo HTML para multimedia
         return "contacto/contacto";
-    }
+    }*/
     
 }
