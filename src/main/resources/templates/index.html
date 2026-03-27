@@ -202,13 +202,13 @@
 	    text-align: center;
 	}
 	
-	.modal-content {
-	    display: flex;
-	    justify-content: center;
-	    align-items: center;
-	    height: 100%;
-	}
-	
+		.modal-content img {
+		    max-width: 100%;
+		    max-height: 100%;
+		    border-radius: 5px;
+		    object-fit: contain;
+		}
+
 	.modal-content img {
 	    max-width: 90%;
 	    max-height: 90%;
@@ -337,6 +337,12 @@
                 <span class="sr-only">Next</span>
             </a>
         </div>
+        
+        <section class="container text-center mt-5">
+		    <h2 class="mb-4" style="color: #006400;">Carta Agradecimiento Semana Santa 2025</h2>
+		    <p class="lead">A continuación, puedes leer la carta de agradecimiento del Hermano Mayor con motivo de la Semana Santa 2025.</p>
+		    <img src="/images/agradecimientoSemanaSanta2025.jpg" alt="Carta agradecimiento" class="img-fluid rounded shadow-sm" style="max-width: 400px; cursor: pointer;" onclick="openModal(this.src)">
+		</section>
         
 		<section class="container text-center mt-5">
 		    <h2 class="mb-4" style="color: #006400;">Recoge tu Papeleta de Sitio</h2>
